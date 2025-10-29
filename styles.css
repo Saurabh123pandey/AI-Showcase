@@ -1,0 +1,547 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #111;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  /* overflow: hidden; */
+}
+
+/* background canvas */
+.navbar canvas#navbar-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color:  rgba(255, 0, 255, 0.8);
+  position: relative;
+  z-index: 2;
+   text-shadow: 1px 1px 9px #1302ff,-5px -5px 5px #000000;
+}
+
+/* nav layout (desktop) */
+nav {
+  position: relative;
+  z-index: 2;
+}
+
+#nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  transition: all 0.4s ease;
+}
+
+#nav-menu li a {
+    font-size: 19px;
+
+  color:rgb(254, 125, 222);
+  text-decoration: none;
+  transition: color 0.3s;
+  text-shadow: 1px 1px 9px #0206ff,-5px -5px 5px #000000;
+}
+
+#nav-menu li a:hover {
+  color: #ffffff;
+  text-shadow: 2px 2px 5px #1302ff,-3px -2px 5px #ff00cc;
+}
+
+/* menu toggle hidden on desktop */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 3;
+}
+
+main {
+    padding-top: 70px;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 6rem 2rem;
+    background: #111;
+    overflow: hidden;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero canvas#ai-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    max-width: 900px;
+    padding: 0 1rem;
+}
+
+.hero h1 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    
+    text-shadow: 3px 3px 5px #ff00ff,-3px -2px 5px #000000;
+    
+}
+
+.hero p {
+    color:  #ffffff;
+    font-size: 1.5rem;
+    text-shadow: 3px 3px 5px #0000ff,-3px -2px 5px #000000;
+    
+}
+
+/* Responsive Text */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Mobile layout */
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1.1rem;
+    }
+    .hero {
+        padding: 4rem 1rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .hero {
+        padding: 3rem 1rem;
+    }
+}
+.AiTools{
+    color: #ffffff;
+    justify-items:center;
+  
+    margin:20px 20px 0px 20px;
+    justify-content: center;
+    align-items: center;
+}
+.AiTools h1{
+    color: #ffffff;
+    text-shadow: 3px 3px 5px #ff00ff,-2px -2px 5px #0000ff;
+}
+
+
+.ai-tools {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tool-card {
+    background-color: #060606;
+    border-radius: 10px;
+    /* border: 0.5px solid rgba(48, 227, 243, 0.365); */
+    overflow: hidden;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); */
+    height: 200px;
+    padding: 1rem;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 1px 1px rgba(168, 85, 247, 0.5);
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(255, 0, 255, 0.3);
+}
+
+.tool-logo {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.tool-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 3rem;
+}
+
+.tool-content h3 {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.tagline {
+    color: rgba(255, 0, 255, 0.8);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.description {
+    color:#cccccc;
+    margin-bottom: 0.5rem;
+    flex-grow: 1;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    text-align: left;
+}
+
+.visit-link {
+    display: block;
+    width: 150px;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 0,255, 0.5);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 20px;
+    text-align: center;
+    margin: 0 auto;
+    transition: transform 0.3s, background-color 0.3s;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.tool-card:hover .visit-link {
+    opacity: 1;
+    transform: translateY(0) scale(1.05);
+}
+
+.visit-link:hover {
+    background-color:rgba(255, 0, 255, 0.8);
+}
+
+.about-section {
+    padding: 0rem 2rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.about-section h2{
+    padding: 20px;
+    color: #ffffff;
+    text-shadow: 3px 3px 5px #ff00ff,-2px -2px 5px #0000ff;
+}
+.about-section h3{
+    padding: 10px;
+    color: #ffffff;
+    text-shadow: 3px 3px 5px #ff00ff,-2px -2px 5px #0000ff;
+    
+    
+}
+
+.about-section ul {
+    text-align: left;
+    max-width: 600px;
+    margin: 2rem auto;
+    list-style: none;
+}
+
+.about-section li {
+    margin-bottom: 0.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: rgba(226, 103, 245, 0.9);
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 2rem;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: rgba(255, 0, 255, 0.9);
+}
+
+.contact-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.contact-section h2{
+    color: #ffffff;
+    text-shadow: 3px 3px 5px #ff00ff,-2px -2px 5px #0000ff;
+    padding-bottom: 20px;
+}
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.contact-info {
+    flex: 1;
+    text-align: left;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+}
+
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #222;
+    color: #ffffff;
+}
+
+.contact-form button {
+    padding: 0.75rem;
+    background-color: rgba(226, 103, 245, 0.9);
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color:rgba(255, 0, 255, 0.9);
+}
+
+.footer {
+    position: relative;
+    background-color: #111;
+    padding: 2rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.footer canvas#footer-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none; 
+}
+
+.footer-content {
+    position: relative;
+    z-index: 1;
+    font-size: 1.5rem;
+}
+.footer-content p{
+   
+    text-shadow: 3px 3px 5px #ff00ff,-2px -2px 5px #0000ff;
+    
+}
+
+.social-icons a {
+    color: rgba(192, 141, 192, 0.9);
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: rgba(255, 0, 255, 0.9);
+}
+
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color:rgba(255, 0, 255, 0.9);
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: none;
+    transition: opacity 0.3s;
+    z-index: 9999;  
+}
+
+.scroll-to-top.show {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .ai-tools {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Keep contact form on left, address (info) on right */
+    .contact-container {
+    flex-direction: row;           /* side by side */
+    justify-content: space-between;
+    align-items: center;           /* vertically center */
+    gap: 2rem;
+   
+    
+    
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 500px;              /* left side */
+}
+
+.contact-info {
+    flex: 1;
+    text-align: center;            /* right side */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;       /* vertical center */
+}
+
+}
+
+
+
+@media (max-width: 768px) {
+    .ai-tools {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 5; /* ✅ ensure toggle is clickable */
+    }
+
+    #nav-menu {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: rgba(17, 17, 17, 0.95);
+        display: flex; /* ✅ added explicitly */
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 10px;
+        padding: 1rem;
+        width: 220px;
+        gap: 1rem;
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+        transition: all 0.35s ease;
+        z-index: 10; /* ✅ ensure menu is above canvas */
+    }
+
+    #nav-menu.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+        backdrop-filter: blur(8px);
+    }
+
+    #nav-menu li {
+        margin: 0.5rem 0;
+        text-align: left;
+        width: 100%;
+    }
+
+    #nav-menu li a {
+        color: rgb(255, 0, 191);
+        text-decoration: none;
+        width: 100%;
+        display: block;
+        padding: 0.5rem 0.5rem;
+    }
+
+    .contact-container {
+    flex-direction: column;
+    align-items: center;     /* ✅ line added */
+    text-align: center;      /* ✅ line added */
+}
+.contact-info {
+    text-align: center;      /* ✅ new block */
+    margin-bottom: 2rem;     /* ✅ optional spacing */
+}
+.contact-form {
+    width: 100%;             /* ✅ new block */
+    max-width: 400px;
+}
+
+}
